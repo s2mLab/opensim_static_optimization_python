@@ -1,0 +1,17 @@
+# create a dev conda environment with: `make create_env` or `conda env create -f environment.yml`
+name: static_optim
+channels:
+  - defaults
+  - conda-forge
+  - kzts
+  - pyomeca
+dependencies:
+  - python
+  - pyyaml
+  - numpy
+  - scipy
+  - cyipopt
+  - ipopt
+  - pyomeca
+  - matplotlib
+  - opensim

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<OpenSimDocument Version="30000">
+    <ForceSet name="Wu_model_with_box">
+        <defaults>
+            <CoordinateActuator name="default">
+                <!--Flag indicating whether the force is disabled or not. Disabled means that the force is not active in subsequent dynamics realizations.-->
+                <isDisabled>false</isDisabled>
+                <!--Minimum allowed value for control signal. Used primarily when solving for control values.-->
+                <min_control>-infinity</min_control>
+                <!--Maximum allowed value for control signal. Used primarily when solving for control values.-->
+                <max_control>infinity</max_control>
+                <!--Name of the generalized coordinate to which the actuator applies.-->
+                <coordinate/>
+                <!--The maximum generalized force produced by this actuator.-->
+                <optimal_force>2</optimal_force>
+            </CoordinateActuator>
+
+            <PointActuator name="default">
+                <!--Flag indicating whether the force is disabled or not. Disabled means that the force is not active in subsequent dynamics realizations.-->
+                <isDisabled>false</isDisabled>
+                <!--Minimum allowed value for control signal. Used primarily when solving for control values.-->
+                <min_control>-Inf</min_control>
+                <!--Maximum allowed value for control signal. Used primarily when solving for control values.-->
+                <max_control>Inf</max_control>
+                <!--Name of Body to which this actuator is applied.-->
+                <body/>
+                <!--Location of application point; in body frame unless point_is_global=true-->
+                <point/>
+                <!--Interpret point in Ground frame if true; otherwise, body frame.-->
+                <point_is_global>false</point_is_global>
+                <!--Force application direction; in body frame unless force_is_global=true.-->
+                <direction/>
+                <!--Interpret direction in Ground frame if true; otherwise, body frame.-->
+                <force_is_global>false</force_is_global>
+                <!--The maximum force produced by this actuator when fully activated.-->
+                <optimal_force>5</optimal_force>
+            </PointActuator>
+
+            <TorqueActuator name="default">
+                <!--Flag indicating whether the force is disabled or not. Disabled means that the force is not active in subsequent dynamics realizations.-->
+                <isDisabled>false</isDisabled>
+                <!--Minimum allowed value for control signal. Used primarily when solving for control values.-->
+                <min_control>-Inf</min_control>
+                <!--Maximum allowed value for control signal. Used primarily when solving for control values.-->
+                <max_control>Inf</max_control>
+                <!--Name of Body to which the torque actuator is applied.-->
+                <bodyA/>
+                <!--Name of Body to which the equal and opposite torque is applied.-->
+                <bodyB/>
+                <!--Interpret axis in Ground frame if true; otherwise, body A s frame.-->
+                <torque_is_global>false</torque_is_global>
+                <!--Fixed direction about which torque is applied, in Ground or body A frame depending on torque_is_global property.-->
+                <axis/>
+                <!--The maximum torque produced by this actuator when fully activated.-->
+                <optimal_force>5</optimal_force>
+            </TorqueActuator>
+
+
+        </defaults>
+
+
+        <objects>
+        <CoordinateActuator name="pelvis_rz">
+		<coordinate>pelvis_tilt</coordinate>
+		<optimal_force>300</optimal_force>
+	</CoordinateActuator>
+        <CoordinateActuator name="pelvis_rx">
+		<coordinate>pelvis_list</coordinate>
+		<optimal_force>300</optimal_force>
+	</CoordinateActuator>
+        <CoordinateActuator name="pelvis_ry">
+		<coordinate>pelvis_rotation</coordinate>
+		<optimal_force>300</optimal_force>
+	</CoordinateActuator>
+        <CoordinateActuator name="pelvis_tx">
+		<coordinate>pelvis_tx</coordinate>
+		<optimal_force>300</optimal_force>
+	</CoordinateActuator>
+        <CoordinateActuator name="pelvis_ty">
+		<coordinate>pelvis_ty</coordinate>
+		<optimal_force>300</optimal_force>
+	</CoordinateActuator>
+        <CoordinateActuator name="pelvis_tz">
+		<coordinate>pelvis_tz</coordinate>
+		<optimal_force>300</optimal_force>
+	</CoordinateActuator>
+
+            <!-- RESIDUAL ACTUATORS -->
+
+
+        </objects>
+        <groups/>
+    </ForceSet>
+</OpenSimDocument>
